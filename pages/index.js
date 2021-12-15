@@ -8,7 +8,7 @@ export default function Home() {
      * declaration de variable
      */
     const [count,setCount]=useState(0)
-    const [todoList,setTodoList] = useState(["task1","task2","task3"])
+    const [todoList,setTodoList] = useState([])
     const [inter,setInter] = useState(" ")
     console.log(count);
   return (
@@ -26,22 +26,21 @@ export default function Home() {
           <h3>count : {count}</h3>
           <button  onClick={ () => setCount(count+1)}>Button</button>
 
-          <input type="text" onChange={event => setInter(event.target.value)}></input>
+          <input type="text" onChange={event => setInter(event.target.value)}>Tache</input>
 
           <button  onClick={ () => setTodoList([...todoList, inter])}>Button</button>
 
 
-          { todoList.length > 1 &&(
+          { todoList.length > 0 &&(
               todoList.map((todo,i) =>{
                   return (
-                      <div>
-                          <p key={i}>{todo}</p>
-                          <button  key={i} type="button" onClick={() =>setTodoList()}>delate task {i}</button>
+                      <div key={i}>
+                          <p>{todo}</p>
+
+                          <button onClick={()=>setTodoList(prevArray=>prevArray.filter(item=>prevArray.indexOf(item)!==i))}>supprimer</button>
                       </div>)
               })
           )}
-
-
       </main>
       <footer className={styles.footer}>
         <a
