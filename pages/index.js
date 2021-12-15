@@ -3,6 +3,8 @@ import Image from 'next/image'
 import styles from '../styles/Home.module.css'
 import React,{useState} from "react";
 
+
+
 export default function Home() {
     /**
      * declaration de variable
@@ -10,7 +12,20 @@ export default function Home() {
     const [count,setCount]=useState(0)
     const [todoList,setTodoList] = useState([])
     const [inter,setInter] = useState(" ")
-    console.log(count);
+    const [disable,setDisable]= useState(true);
+    const [editableTodo,setEditableTodo]=useState(null);
+
+    const  editTask =(item,index) => {
+        setEditableTodo(index)
+    }
+        const hanleChange = (e) => {
+            let newTodoList = [...todoList]
+            newTodoList[editableTodo] = e.target.value
+            setTodoList(prevArray => [...prevArray,e.target.value])
+            setTodoList(newTodoList)
+    }
+
+
   return (
     <div className={styles.container}>
       <Head>
@@ -25,9 +40,7 @@ export default function Home() {
           </h1>
           <h3>count : {count}</h3>
           <button  onClick={ () => setCount(count+1)}>Button</button>
-
-          <input type="text" onChange={event => setInter(event.target.value)}>Tache</input>
-
+          <input type="text" onChange={event => setInter(event.target.value)} />
           <button  onClick={ () => setTodoList([...todoList, inter])}>Button</button>
 
 
@@ -36,8 +49,9 @@ export default function Home() {
                   return (
                       <div key={i}>
                           <p>{todo}</p>
-
-                          <button onClick={()=>setTodoList(prevArray=>prevArray.filter(item=>prevArray.indexOf(item)!==i))}>supprimer</button>
+                          <input type='text' onChange={e => hanleChange(e)} value={todo} disabled={editableTodo === i ? false :true}/>
+                          <button onClick={()=>editTask(todo,i)}>Edit</button>
+                          <button onClick={()=> setTodoList(prevArray=>prevArray.filter(item=>prevArray.indexOf(item)!==i))}>Supprimer</button>
                       </div>)
               })
           )}
