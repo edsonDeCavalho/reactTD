@@ -34,12 +34,15 @@ export default function Home() {
             setTodoList(prevArray => [...prevArray,e.target.value])
             setTodoList(newTodoList)
     }
-    /*Utilisation de Use Effect*/
-    useEffect(()=>{
+    /*Utilisation de useEffect*/
+    useEffect(()=> {
         console.log("modification")
     },[todoList]);
 
-
+    useEffect(()=> {
+        localStorage.setItem("todos",todoList)
+        let historique = localStorage.getItem("todos")
+    },[todoList]);
     return (
     <div className={styles.container}>
       <Head>
