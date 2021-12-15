@@ -1,20 +1,30 @@
+/**
+ * Exercice 1 TD React
+ * Edson De Carvalho
+ */
+
 import Head from 'next/head'
 import Image from 'next/image'
 import styles from '../styles/Home.module.css'
-import React,{useState} from "react";
+import React,{useState,useEffect} from "react";
+
 
 
 
 export default function Home() {
     /**
-     * declaration de variable
+     * Declaration des variable
      */
     const [count,setCount]=useState(0)
     const [todoList,setTodoList] = useState([])
     const [inter,setInter] = useState(" ")
     const [disable,setDisable]= useState(true);
     const [editableTodo,setEditableTodo]=useState(null);
-
+    /**
+     * Fuction pour desable un input text
+     * @param item
+     * @param index
+     */
     const  editTask =(item,index) => {
         setEditableTodo(index)
     }
@@ -24,9 +34,13 @@ export default function Home() {
             setTodoList(prevArray => [...prevArray,e.target.value])
             setTodoList(newTodoList)
     }
+    /*Utilisation de Use Effect*/
+    useEffect(()=>{
+        console.log("modification")
+    },[todoList]);
 
 
-  return (
+    return (
     <div className={styles.container}>
       <Head>
         <title>Create Next App</title>
@@ -43,7 +57,7 @@ export default function Home() {
           <input type="text" onChange={event => setInter(event.target.value)} />
           <button  onClick={ () => setTodoList([...todoList, inter])}>Button</button>
 
-
+          {/*Boucle d'affichage de elemnts*/}
           { todoList.length > 0 &&(
               todoList.map((todo,i) =>{
                   return (
