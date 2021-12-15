@@ -7,6 +7,10 @@ import Head from 'next/head'
 import Image from 'next/image'
 import styles from '../styles/Home.module.css'
 import React,{useState,useEffect} from "react";
+import 'bootstrap/dist/css/bootstrap.min.css';
+import Card from "../components/Card"
+import Grid from "../components/Grid";
+
 
 
 
@@ -52,9 +56,11 @@ export default function Home() {
       </Head>
 
       <main className={styles.main}>
+          <div classNme={styles.header}>
           <h1 className={styles.title}>
              Hello Edson
           </h1>
+          </div>
           <h3>count : {count}</h3>
           <button  onClick={ () => setCount(count+1)}>Button</button>
           <input type="text" onChange={event => setInter(event.target.value)} />
@@ -72,6 +78,8 @@ export default function Home() {
                       </div>)
               })
           )}
+          <Card title={"Edson"} description={"Edson trés cool"} image="icon.png" />
+          <Grid />
       </main>
       <footer className={styles.footer}>
         <a
