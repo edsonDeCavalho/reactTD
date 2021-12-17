@@ -4,6 +4,9 @@
 import react from "react"
 import Image from "next/image"
 import styles from "../styles/Home.module.css";
+
+
+
 export default function Card(props) {
     const showPros = (e) => {
         console.log(props.title)
@@ -12,7 +15,7 @@ export default function Card(props) {
     }
     return (
 
-        <div className={"card"}>
+        <div className={"card"} >
             <div className={"card-body"}>
                 <img className={"card-img-top"} src="../public/" alt={"Card image cap"}/>
                 <h5 className={"card-title"}>{props.title}</h5>

@@ -60,18 +60,16 @@ export default function Home() {
       <main className={styles.main}>
           <div className="container">
               <div className="row">
-                  <div className={"col-xs-12"}><div className={"col-xs-12"}>
+                  <div className={"col-xs-12"}>
                       <nav className={"navbar navbar-light bg-light justify-content-between"}>
                           <a className={"navbar-brand"}>React Edson</a>
                           <form className={"form-inline"}>
                               <button className={"btn btn-outline-success my-2 my-sm-0"} >Login</button>
                           </form>
                       </nav>
-                  </div></div>
-                  <div className={"col-xs-12"}> <Grid /></div>
-                  <div className={"col-xs-12"}></div>
-                  <div className={"col-xs-12"}></div>
+                  </div>
               </div>
+              <div className={"row"}> <Grid /></div>
           </div>
       </main>
 

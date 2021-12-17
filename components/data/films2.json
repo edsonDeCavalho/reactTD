@@ -1,0 +1,67 @@
+[
+  {
+    "adult": false,
+    "backdrop_path": "/hJuDvwzS0SPlsE6MNFOpznQltDZ.jpg",
+    "genre_ids": [16, 12, 14, 10751, 28],
+    "id": 527774,
+    "original_language": "en",
+    "original_title": "Raya and the Last Dragon",
+    "overview": "Long ago, in the fantasy world of Kumandra, humans and dragons lived together in harmony. But when an evil force threatened the land, the dragons sacrificed themselves to save humanity. Now, 500 years later, that same evil has returned and it’s up to a lone warrior, Raya, to track down the legendary last dragon to restore the fractured land and its divided people.",
+    "popularity": 3686.429,
+    "poster_path": "/lPsD10PP4rgUGiGR4CCXA6iY0QQ.jpg",
+    "release_date": "2021-03-03",
+    "title": "Raya and the Last Dragon",
+    "video": false,
+    "vote_average": 8.5,
+    "vote_count": 1407
+  },
+  {
+    "adult": false,
+    "backdrop_path": "/gzJnMEMkHowkUndn9gCr8ghQPzN.jpg",
+    "genre_ids": [53, 28, 18],
+    "id": 793723,
+    "original_language": "fr",
+    "original_title": "Sentinelle",
+    "overview": "Transferred home after a traumatizing combat mission, a highly trained French soldier uses her lethal skills to hunt down the man who hurt her sister.",
+    "popularity": 2375.293,
+    "poster_path": "/fFRq98cW9lTo6di2o4lK1qUAWaN.jpg",
+    "release_date": "2021-03-05",
+    "title": "Sentinelle",
+    "video": false,
+    "vote_average": 6.1,
+    "vote_count": 217
+  },
+  {
+    "adult": false,
+    "backdrop_path": "/pcDc2WJAYGJTTvRSEIpRZwM3Ola.jpg",
+    "genre_ids": [28, 12, 878, 14],
+    "id": 791373,
+    "original_language": "en",
+    "original_title": "Zack Snyder's Justice League",
+    "overview": "Determined to ensure Superman's ultimate sacrifice was not in vain, Bruce Wayne aligns forces with Diana Prince with plans to recruit a team of metahumans to protect the world from an approaching threat of catastrophic proportions.",
+    "popularity": 2190.931,
+    "poster_path": "/tnAuB8q5vv7Ax9UAEje5Xi4BXik.jpg",
+    "release_date": "2021-03-18",
+    "title": "Zack Snyder's Justice League",
+    "video": false,
+    "vote_average": 8.8,
+    "vote_count": 1837
+  },
+  {
+    "adult": false,
+    "backdrop_path": "/fev8UFNFFYsD5q7AcYS8LyTzqwl.jpg",
+    "genre_ids": [28, 35, 10751, 16],
+    "id": 587807,
+    "original_language": "en",
+    "original_title": "Tom & Jerry",
+    "overview": "Tom the cat and Jerry the mouse get kicked out of their home and relocate to a fancy New York hotel, where a scrappy employee named Kayla will lose her job if she can’t evict Jerry before a high-class wedding at the hotel. Her solution? Hiring Tom to get rid of the pesky mouse.",
+    "popularity": 2039.388,
+    "poster_path": "/6KErczPBROQty7QoIsaa6wJYXZi.jpg",
+    "release_date": "2021-02-11",
+    "title": "Tom & Jerry",
+    "video": false,
+    "vote_average": 7.5,
+    "vote_count": 883
+  }
+]
+

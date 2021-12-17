@@ -17,19 +17,14 @@ export default function Grid(props) {
      * Prix
      *
      */
-
-    const elements = [1, 2, 3, 4, 5, 4, 7, 8, 9, 10, 11, 12];
     const newdata = films.map((data) => {
             return (
-                <div  key={data.id} className={"col-lg-2"}><Card title={data.title}  description={"Avec ses deux amies"} note={data.vote_average}/></div>
+                <div  key={data.id} className={"col-lg-3"}><Card title={data.title}  description={data.overview} note={data.vote_average}/></div>
             )
         }
     )
-    return(<div className={"container"}>
-        <div className={"row"}>
-            {newdata}
-        </div>
-    </div>
+    return(
+            newdata
     )
 
 }
