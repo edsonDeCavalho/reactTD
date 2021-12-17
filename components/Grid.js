@@ -4,8 +4,10 @@
 import react from "react"
 import Image from "next/image"
 import styles from "../styles/Home.module.css";
+import films from "./data/films2.json";
 import Card from "./Card"
-export default function Grid(props){
+import React from "react";
+export default function Grid(props) {
 
     /**
      * Props a envoyer
@@ -16,23 +18,18 @@ export default function Grid(props){
      *
      */
 
-
-    return (
-        <div className={"container"}>
-            <div className={"row"}>
-                <div className={"col-lg-2"}><Card description={"Avec ses deux amis Diggy et Jibs, ils jonglent entre musique, lycée et entretiens pour entrer à l'université. Une invitation à une s "} /></div>
-                <div className={"col-lg-2"}><Card description={"Avec ses deux amis Diggy et Jibs, ils jonglent entre musique, lycée et entretiens pour entrer à l'université. Une invitation à une s "}/></div>
-                <div className={"col-lg-2"}><Card description={"Avec ses deux amis Diggy et Jibs, ils jonglent entre musique, lycée et entretiens pour entrer à l'université. Une invitation à une s "}/></div>
-                <div className={"col-lg-2"}><Card description={"Avec ses deux amis Diggy et Jibs, ils jonglent entre musique, lycée et entretiens pour entrer à l'université. Une invitation à une s "}/></div>
-                <div className={"col-lg-2"}><Card description={"Avec ses deux amis Diggy et Jibs, ils jonglent entre musique, lycée et entretiens pour entrer à l'université. Une invitation à une s "}/></div>
-                <div className={"col-lg-2"}><Card description={"Avec ses deux amis Diggy et Jibs, ils jonglent entre musique, lycée et entretiens pour entrer à l'université. Une invitation à une s "}/></div>
-                <div className={"col-lg-2"}><Card description={"Avec ses deux amis Diggy et Jibs, ils jonglent entre musique, lycée et entretiens pour entrer à l'université. Une invitation à une s "}/></div>
-                <div className={"col-lg-2"}><Card description={"Avec ses deux amis Diggy et Jibs, ils jonglent entre musique, lycée et entretiens pour entrer à l'université. Une invitation à une s "}/></div>
-                <div className={"col-lg-2"}><Card description={"Avec ses deux amis Diggy et Jibs, ils jonglent entre musique, lycée et entretiens pour entrer à l'université. Une invitation à une s "}/></div>
-                <div className={"col-lg-2"}><Card description={"Avec ses deux amis Diggy et Jibs, ils jonglent entre musique, lycée et entretiens pour entrer à l'université. Une invitation à une s "}/></div>
-                <div className={"col-lg-2"}><Card description={"Avec ses deux amis Diggy et Jibs, ils jonglent entre musique, lycée et entretiens pour entrer à l'université. Une invitation à une s "}/></div>
-                <div className={"col-lg-2"}><Card description={"Avec ses deux amis Diggy et Jibs, ils jonglent entre musique, lycée et entretiens pour entrer à l'université. Une invitation à une s "}/></div>
-            </div>
-        </div>
+    const elements = [1, 2, 3, 4, 5, 4, 7, 8, 9, 10, 11, 12];
+    const newdata = films.map((data) => {
+            return (
+                <div  key={data.id} className={"col-lg-2"}><Card title={data.title}  description={"Avec ses deux amies"} note={data.vote_average}/></div>
+            )
+        }
     )
+    return(<div className={"container"}>
+        <div className={"row"}>
+            {newdata}
+        </div>
+    </div>
+    )
+
 }

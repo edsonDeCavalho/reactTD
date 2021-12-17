@@ -2,14 +2,16 @@
  * Exercice 1 TD React
  * Edson De Carvalho
  */
-
-import Head from 'next/head'
-import Image from 'next/image'
+import {Navbar} from "react-bootstrap";
+import Head from 'next/head';
+import Image from 'next/image';
 import styles from '../styles/Home.module.css'
 import React,{useState,useEffect} from "react";
 import 'bootstrap/dist/css/bootstrap.min.css';
-import Card from "../components/Card"
+import Card from "../components/Card";
 import Grid from "../components/Grid";
+import eDNavBar from "../components/navBar";
+
 
 
 
@@ -56,43 +58,23 @@ export default function Home() {
       </Head>
 
       <main className={styles.main}>
-          <div classNme={styles.header}>
-          <h1 className={styles.title}>
-             Hello Edson
-          </h1>
+          <div className="container">
+              <div className="row">
+                  <div className={"col-xs-12"}><div className={"col-xs-12"}>
+                      <nav className={"navbar navbar-light bg-light justify-content-between"}>
+                          <a className={"navbar-brand"}>React Edson</a>
+                          <form className={"form-inline"}>
+                              <button className={"btn btn-outline-success my-2 my-sm-0"} >Login</button>
+                          </form>
+                      </nav>
+                  </div></div>
+                  <div className={"col-xs-12"}> <Grid /></div>
+                  <div className={"col-xs-12"}></div>
+                  <div className={"col-xs-12"}></div>
+              </div>
           </div>
-          <h3>count : {count}</h3>
-          <button  onClick={ () => setCount(count+1)}>Button</button>
-          <input type="text" onChange={event => setInter(event.target.value)} />
-          <button  onClick={ () => setTodoList([...todoList, inter])}>Button</button>
-
-          {/*Boucle d'affichage de elemnts*/}
-          { todoList.length > 0 &&(
-              todoList.map((todo,i) =>{
-                  return (
-                      <div key={i}>
-                          <p>{todo}</p>
-                          <input type='text' onChange={e => hanleChange(e)} value={todo} disabled={editableTodo === i ? false :true}/>
-                          <button onClick={()=>editTask(todo,i)}>Edit</button>
-                          <button onClick={()=> setTodoList(prevArray=>prevArray.filter(item=>prevArray.indexOf(item)!==i))}>Supprimer</button>
-                      </div>)
-              })
-          )}
-          <Card title={"Edson"} description={"Edson trés cool"} image="icon.png" />
-          <Grid />
       </main>
-      <footer className={styles.footer}>
-        <a
-          href="https://vercel.com?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Powered by{' '}
-          <span className={styles.logo}>
-            <Image src="/vercel.svg" alt="Vercel Logo" width={72} height={16} />
-          </span>
-        </a>
-      </footer>
+
     </div>
   )
 }
